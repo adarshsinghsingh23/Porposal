@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACT 3.0 — Website Design & Build Proposal</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+ 
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --forest:#1a3d2e;
+  --forest-mid:#234d39;
+  --forest-light:#2d6147;
+  --gold:#c8903a;
+  --gold-light:#dba95c;
+  --cream:#f8f4ec;
+  --cream-dark:#f0ead8;
+  --text:#1a1a18;
+  --text-mid:#4a4a45;
+  --text-muted:#8a8a82;
+  --white:#ffffff;
+  --border:#e8e4dc;
+}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  line-height:1.6;
+  font-size:14px;
+  width:210mm;
+  margin:0 auto;
+}
+ 
+/* PAGE BREAKS */
+.page-break { page-break-after: always; break-after: always; }
+.no-break { page-break-inside: avoid; break-inside: avoid; }
+ 
+/* HERO */
+.hero{
+  background:var(--forest);
+  color:var(--white);
+  padding:60px 56px 68px;
+  position:relative;
+  overflow:hidden;
+}
+.submitted-by{
+  font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:20px;
+}
+.hero-logo{
+  font-family:'Playfair Display',serif;font-size:12px;font-style:italic;
+  color:rgba(255,255,255,0.45);margin-bottom:44px;
+}
+.hero-eyebrow{
+  font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;font-size:62px;font-weight:700;
+  line-height:1.05;margin-bottom:10px;
+}
+.hero h1 em{font-style:italic;color:var(--gold-light)}
+.hero-sub{
+  font-size:15px;color:rgba(255,255,255,0.62);
+  max-width:460px;margin-top:14px;line-height:1.75;font-weight:300;
+}
+.hero-meta{
+  margin-top:50px;display:flex;gap:40px;
+  padding-top:36px;border-top:1px solid rgba(255,255,255,0.1);
+  flex-wrap:wrap;
+}
+.hero-meta-item label{
+  font-size:9px;letter-spacing:0.13em;text-transform:uppercase;
+  color:rgba(255,255,255,0.38);display:block;margin-bottom:5px;
+}
+.hero-meta-item span{font-size:14px;color:var(--white);font-weight:500}
+ 
+/* LAYOUT */
+.section{padding:52px 56px}
+.section-alt{background:var(--white)}
+.section-dark{background:var(--forest);color:var(--white)}
+.section-cream{background:var(--cream)}
+ 
+.eyebrow{
+  font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:12px;
+}
+.eyebrow-light{color:rgba(255,255,255,0.45)}
+.eyebrow-onwhite{color:var(--forest)}
+.eyebrow-dark{color:var(--forest)}
+ 
+h2{
+  font-family:'Playfair Display',serif;font-size:32px;font-weight:700;
+  line-height:1.2;margin-bottom:14px;
+}
+h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;margin-bottom:10px}
+.lead{
+  font-size:15px;color:var(--text-mid);line-height:1.85;
+  max-width:600px;font-weight:300;margin-bottom:0;
+}
+ 
+/* EXEC SUMMARY */
+.exec-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:40px}
+.exec-left p{font-size:14px;line-height:1.9;color:var(--text-mid);font-weight:300;margin-bottom:16px}
+.exec-pillars{display:grid;gap:12px}
+.pillar{padding:16px 20px;border-left:2.5px solid var(--gold);background:var(--cream);border-radius:0 6px 6px 0}
+.pillar h4{font-size:12px;font-weight:600;color:var(--forest);margin-bottom:3px;letter-spacing:0.02em}
+.pillar p{font-size:12px;color:var(--text-muted);line-height:1.6}
+ 
+/* IMPACT FLOW */
+.flow-section{background:var(--forest);padding:60px 56px;overflow:hidden;position:relative}
+.flow-title{
+  font-family:'Playfair Display',serif;font-size:32px;
+  color:var(--white);margin-bottom:6px;
+}
+.flow-sub{color:rgba(255,255,255,0.48);font-size:14px;margin-bottom:44px;font-weight:300}
+.flow-steps{display:flex;align-items:flex-start;gap:0}
+.flow-step{flex:1;text-align:center}
+.flow-node{
+  width:64px;height:64px;border-radius:50%;
+  border:1.5px solid rgba(200,144,58,0.38);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  margin:0 auto 12px;background:rgba(200,144,58,0.1);
+}
+.flow-step:last-child .flow-node{
+  border-color:var(--gold);background:rgba(200,144,58,0.22);
+  box-shadow:0 0 24px rgba(200,144,58,0.2);
+}
+.flow-num{font-size:9px;font-weight:700;color:var(--gold);letter-spacing:0.08em}
+.flow-icon{font-size:18px;margin-top:1px}
+.flow-label{
+  font-size:10px;font-weight:500;color:rgba(255,255,255,0.68);
+  letter-spacing:0.05em;text-transform:uppercase;line-height:1.4;
+}
+.flow-arrow{
+  flex:0 0 28px;text-align:center;color:rgba(200,144,58,0.38);
+  font-size:16px;margin-top:22px;
+}
+ 
+/* PHASES */
+.phases{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);margin-top:40px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.phase-card{background:var(--white);padding:28px}
+.phase-num{
+  font-size:9px;font-weight:700;letter-spacing:0.16em;
+  color:var(--gold);margin-bottom:14px;text-transform:uppercase;
+}
+.phase-card h3{font-size:16px;margin-bottom:10px;color:var(--forest)}
+.phase-card p{font-size:12px;color:var(--text-muted);line-height:1.7}
+.phase-deliverables{margin-top:16px;border-top:1px solid var(--border);padding-top:14px}
+.phase-deliverables h5{
+  font-size:9px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--text-muted);margin-bottom:8px;
+}
+.phase-deliverables ul{list-style:none;display:flex;flex-wrap:wrap;gap:5px}
+.phase-deliverables li{
+  font-size:11px;background:var(--cream);color:var(--forest);
+  padding:3px 9px;border-radius:4px;border:1px solid var(--cream-dark);font-weight:500;
+}
+ 
+/* TECH STACK */
+.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.tech-card{
+  padding:28px;border:1px solid var(--border);border-radius:10px;
+  background:var(--white);position:relative;overflow:hidden;
+}
+.tech-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);
+}
+.tech-badge{
+  display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.15em;
+  text-transform:uppercase;color:var(--forest);background:var(--cream);
+  padding:3px 9px;border-radius:4px;margin-bottom:16px;border:1px solid var(--cream-dark);
+}
+.tech-card h3{font-size:18px;font-weight:700;color:var(--forest);margin-bottom:8px}
+.tech-card .tech-desc{font-size:12px;color:var(--text-muted);line-height:1.7;margin-bottom:16px}
+.tech-benefits{list-style:none;display:flex;flex-direction:column;gap:5px}
+.tech-benefits li{
+  font-size:12px;color:var(--text-mid);display:flex;align-items:center;gap:7px;
+}
+.tech-benefits li::before{
+  content:'';width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;
+}
+ 
+/* FEATURES */
+.features-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.feature-card{padding:28px;border:1px solid var(--border);border-radius:10px;background:var(--cream)}
+.feature-icon-wrap{
+  width:42px;height:42px;border-radius:8px;background:var(--forest);
+  display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:20px;
+}
+.feature-card h3{font-size:15px;color:var(--forest);margin-bottom:7px}
+.feature-card p{font-size:12px;color:var(--text-muted);line-height:1.7}
+ 
+/* TIMELINE */
+.timeline-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:40px}
+.tl-item{
+  padding:20px 24px;border-left:2px solid var(--border);
+  margin-bottom:0;position:relative;
+}
+.tl-item:nth-child(odd){border-left-color:var(--gold)}
+.tl-week{
+  font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:4px;
+}
+.tl-item h4{font-size:14px;font-weight:600;color:var(--text);margin-bottom:3px}
+.tl-item p{font-size:12px;color:var(--text-muted);line-height:1.6}
+ 
+/* INVESTMENT */
+.investment-section{background:var(--forest);padding:60px 56px}
+.inv-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start;margin-top:40px}
+.inv-table{width:100%;border-collapse:separate;border-spacing:0}
+.inv-table tr{}
+.inv-table td{
+  padding:13px 0;font-size:13px;vertical-align:middle;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.inv-table tr:last-child td{border-bottom:none}
+.inv-table .service{color:rgba(255,255,255,0.65);font-weight:300}
+.inv-table .amount{text-align:right;color:var(--white);font-weight:600;font-size:14px}
+.inv-divider{border-top:1px solid rgba(200,144,58,0.35)!important;padding-top:18px!important}
+.inv-total .service{font-size:15px;font-weight:600;color:var(--white)}
+.inv-total .amount{font-size:20px;color:var(--gold)}
+.inv-gst td{padding-top:4px!important;border-bottom:none!important}
+.inv-gst .gst-note{font-size:10px;color:rgba(255,255,255,0.35);text-align:right}
+ 
+.big-number{
+  font-family:'Playfair Display',serif;font-size:68px;font-weight:700;
+  color:var(--gold);line-height:1;margin-bottom:6px;
+}
+.big-number-label{font-size:12px;color:rgba(255,255,255,0.45);letter-spacing:0.06em;margin-bottom:36px}
+ 
+.why-cards{display:flex;flex-direction:column;gap:14px}
+.why-card{padding:16px 20px;border-left:2px solid rgba(200,144,58,0.4);background:rgba(255,255,255,0.05)}
+.why-card h4{font-size:13px;font-weight:600;color:var(--white);margin-bottom:5px}
+.why-card p{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.65;font-weight:300}
+ 
+/* SEO SECTION */
+.seo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.seo-card{padding:24px;border:1px solid var(--border);border-radius:10px;background:var(--white)}
+.seo-card h4{font-size:14px;font-weight:600;color:var(--forest);margin-bottom:10px}
+.seo-card ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.seo-card ul li{font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:7px}
+.seo-card ul li::before{content:'✓';color:var(--gold);font-weight:700;font-size:11px}
+ 
+/* CTA */
+.cta-section{padding:60px 56px;background:var(--cream-dark);text-align:center}
+.cta-section h2{
+  font-family:'Playfair Display',serif;font-size:36px;
+  max-width:520px;margin:0 auto 16px;line-height:1.2;
+}
+.cta-section p{
+  font-size:15px;color:var(--text-muted);margin-bottom:0;
+  max-width:440px;margin-left:auto;margin-right:auto;font-weight:300;line-height:1.75;
+}
+.cta-footer{
+  display:flex;align-items:center;justify-content:center;
+  gap:40px;padding-top:36px;border-top:1px solid var(--border);margin-top:40px;
+}
+.cta-contact{text-align:center}
+.cta-contact label{
+  font-size:9px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--text-muted);display:block;margin-bottom:5px;
+}
+.cta-contact span{font-size:14px;font-weight:600;color:var(--forest)}
+.cta-divider{width:1px;height:36px;background:var(--border)}
+.gold-text{color:var(--gold)}
+ 
+/* Q&A */
+.qa-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.qa-card{padding:28px;border:1px solid var(--border);border-radius:10px;background:var(--white)}
+.qa-q{
+  font-size:11px;font-weight:700;letter-spacing:0.03em;
+  color:var(--gold);margin-bottom:10px;font-style:italic;
+  border-bottom:1px solid var(--border);padding-bottom:10px;
+}
+.qa-card p{font-size:12px;color:var(--text-mid);line-height:1.75;font-weight:300}
+</style>
+</head>
+<body>
+ 
+<!-- HERO -->
+<div class="hero">
+  <div class="submitted-by">Proposal</div>
+  <div class="hero-logo">ServBuddy Technologies</div>
+  <div class="hero-eyebrow">Website Design &amp; Build</div>
+  <h1>ACT <em>3.0</em></h1>
+  <p class="hero-sub">A modern, scalable, and story-driven digital experience for India's leading venture philanthropy ecosystem.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <label>Submitted by</label>
+      <span>ServBuddy Technologies</span>
+    </div>
+    <div class="hero-meta-item">
+      <label>Target launch</label>
+      <span>End of August 2026</span>
+    </div>
+    <div class="hero-meta-item">
+      <label>Total investment</label>
+      <span>&#8377;6,50,000 + GST</span>
+    </div>
+    <div class="hero-meta-item">
+      <label>Delivery</label>
+      <span>8 Weeks</span>
+    </div>
+  </div>
+</div>
+ 
+<!-- EXEC SUMMARY -->
+<div class="section section-alt">
+  <div class="eyebrow eyebrow-onwhite">Executive Summary</div>
+  <h2>The digital home of India's impact ecosystem</h2>
+  <div class="exec-grid">
+    <div class="exec-left">
+      <p>ACT has played a critical role in supporting technology-led organizations solving India's most pressing challenges across health, education, and environment. As ACT enters its next phase of growth, the website must evolve beyond being an informational platform.</p>
+      <p>Our vision for ACT 3.0 is to create a platform that clearly communicates the mission, demonstrates institutional credibility while maintaining warmth, and enables the team to manage content independently — without developer support.</p>
+    </div>
+    <div class="exec-pillars">
+      <div class="pillar no-break">
+        <h4>A venture philanthropy leader</h4>
+        <p>Position ACT as the definitive convener of catalytic capital in India's social impact space.</p>
+      </div>
+      <div class="pillar no-break">
+        <h4>A trusted partner for founders</h4>
+        <p>Human storytelling and founder journeys that build emotional connection alongside institutional credibility.</p>
+      </div>
+      <div class="pillar no-break">
+        <h4>A source of knowledge &amp; insight</h4>
+        <p>A living platform that draws repeat visits through research, impact data, and ecosystem insights.</p>
+      </div>
+      <div class="pillar no-break">
+        <h4>A platform for catalytic capital</h4>
+        <p>Clear pathways for philanthropists, founders, and partners to engage and act.</p>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- IMPACT FLOW -->
+<div class="flow-section no-break">
+  <div class="eyebrow eyebrow-light">ACT's thesis, made visual</div>
+  <div class="flow-title">The venture philanthropy model</div>
+  <div class="flow-sub">A visual narrative experience that creates clarity for every audience segment</div>
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="flow-node">
+        <span class="flow-num">01</span>
+        <span class="flow-icon">&#128269;</span>
+      </div>
+      <div class="flow-label">Challenge</div>
+    </div>
+    <div class="flow-arrow">&#8594;</div>
+    <div class="flow-step">
+      <div class="flow-node">
+        <span class="flow-num">02</span>
+        <span class="flow-icon">&#128161;</span>
+      </div>
+      <div class="flow-label">Innovation</div>
+    </div>
+    <div class="flow-arrow">&#8594;</div>
+    <div class="flow-step">
+      <div class="flow-node">
+        <span class="flow-num">03</span>
+        <span class="flow-icon">&#128640;</span>
+      </div>
+      <div class="flow-label">Catalytic Capital</div>
+    </div>
+    <div class="flow-arrow">&#8594;</div>
+    <div class="flow-step">
+      <div class="flow-node">
+        <span class="flow-num">04</span>
+        <span class="flow-icon">&#128200;</span>
+      </div>
+      <div class="flow-label">Scale</div>
+    </div>
+    <div class="flow-arrow">&#8594;</div>
+    <div class="flow-step">
+      <div class="flow-node">
+        <span class="flow-num">05</span>
+        <span class="flow-icon">&#127759;</span>
+      </div>
+      <div class="flow-label">Population-Level Impact</div>
+    </div>
+  </div>
+</div>
+ 
+<!-- PHASES -->
+<div class="section section-cream">
+  <div class="eyebrow">Our approach</div>
+  <h2>Four phases, eight weeks</h2>
+  <p class="lead">A collaborative process combining strategy, design, development, and content architecture.</p>
+  <div class="phases">
+    <div class="phase-card no-break">
+      <div class="phase-num">Phase 01</div>
+      <h3>Discovery &amp; Strategic Alignment</h3>
+      <p>Stakeholder workshops, website audit, competitor benchmarking, and audience journey mapping to lay the strategic foundation.</p>
+      <div class="phase-deliverables">
+        <h5>Deliverables</h5>
+        <ul>
+          <li>Discovery Report</li>
+          <li>Sitemap</li>
+          <li>User journey framework</li>
+          <li>Information architecture</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phase-card no-break">
+      <div class="phase-num">Phase 02</div>
+      <h3>UX &amp; Experience Design</h3>
+      <p>Simplify navigation, improve discoverability, and create clear engagement pathways with mobile-first planning throughout.</p>
+      <div class="phase-deliverables">
+        <h5>Deliverables</h5>
+        <ul>
+          <li>Responsive wireframes</li>
+          <li>Navigation framework</li>
+          <li>User journey prototypes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phase-card no-break">
+      <div class="phase-num">Phase 03</div>
+      <h3>Visual Design System</h3>
+      <p>Evolve ACT's brand with a mature institutional visual language — credible, human, modern, and scalable across all pages.</p>
+      <div class="phase-deliverables">
+        <h5>Deliverables</h5>
+        <ul>
+          <li>Homepage design</li>
+          <li>Key page templates</li>
+          <li>Design system</li>
+          <li>Component library</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phase-card no-break">
+      <div class="phase-num">Phase 04</div>
+      <h3>Development &amp; Launch</h3>
+      <p>Next.js frontend, Sanity CMS integration, Vercel hosting, SEO, accessibility compliance, and full team training.</p>
+      <div class="phase-deliverables">
+        <h5>Deliverables</h5>
+        <ul>
+          <li>Production website</li>
+          <li>CMS handbook</li>
+          <li>Training sessions</li>
+          <li>Analytics setup</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- TECH STACK -->
+<div class="section section-alt">
+  <div class="eyebrow eyebrow-onwhite">Technology</div>
+  <h2>Built to last, easy to own</h2>
+  <p class="lead">A modern stack chosen for performance, SEO, and ACT's long-term editorial independence.</p>
+  <div class="tech-grid">
+    <div class="tech-card no-break">
+      <div class="tech-badge">Frontend</div>
+      <h3>Next.js</h3>
+      <p class="tech-desc">Enterprise-grade React framework delivering fast page loads, superior SEO, and a future-proof architecture.</p>
+      <ul class="tech-benefits">
+        <li>High performance rendering</li>
+        <li>SEO-optimized out of the box</li>
+        <li>Enterprise-ready architecture</li>
+        <li>Fast, reliable page loads</li>
+      </ul>
+    </div>
+    <div class="tech-card no-break">
+      <div class="tech-badge">CMS</div>
+      <h3>Sanity</h3>
+      <p class="tech-desc">A structured content platform that empowers ACT's team to publish, edit, and manage the website independently.</p>
+      <ul class="tech-benefits">
+        <li>Publish blogs without developers</li>
+        <li>Add portfolio organizations</li>
+        <li>Upload reports &amp; press coverage</li>
+        <li>Manage team profiles</li>
+      </ul>
+    </div>
+    <div class="tech-card no-break">
+      <div class="tech-badge">Hosting</div>
+      <h3>Vercel</h3>
+      <p class="tech-desc">Global CDN hosting with instant deployments, 99.99% uptime, and enterprise-grade security infrastructure.</p>
+      <ul class="tech-benefits">
+        <li>Global CDN distribution</li>
+        <li>Fast automated deployment</li>
+        <li>High uptime guarantees</li>
+        <li>Secure infrastructure</li>
+      </ul>
+    </div>
+  </div>
+</div>
+ 
+<!-- KEY FEATURES -->
+<div class="section section-cream">
+  <div class="eyebrow">Key features</div>
+  <h2>A living platform, not a static site</h2>
+  <p class="lead">Five signature experiences that transform the website into an ongoing destination for every audience.</p>
+  <div class="features-grid">
+    <div class="feature-card no-break">
+      <div class="feature-icon-wrap">&#128506;</div>
+      <h3>ACT 3.0 Story Experience</h3>
+      <p>A visual narrative explaining the full venture philanthropy thesis — from challenge to population-level impact — creating clarity for all audience segments.</p>
+    </div>
+    <div class="feature-card no-break">
+      <div class="feature-icon-wrap">&#129521;</div>
+      <h3>Interactive Portfolio Explorer</h3>
+      <p>Organizations filterable by sector, geography, impact area, and growth stage — each with profiles, metrics, founder stories, and related content.</p>
+    </div>
+    <div class="feature-card no-break">
+      <div class="feature-icon-wrap">&#128100;</div>
+      <h3>Founder Stories</h3>
+      <p>Dedicated storytelling with founder journeys, videos, and ecosystem insights. Human connection layered onto institutional credibility.</p>
+    </div>
+    <div class="feature-card no-break">
+      <div class="feature-icon-wrap">&#128225;</div>
+      <h3>Live Impact Dashboard</h3>
+      <p>Dynamic reporting of capital deployed, organizations supported, geographic reach, and beneficiaries — all managed directly from the CMS.</p>
+    </div>
+    <div class="feature-card no-break">
+      <div class="feature-icon-wrap">&#128218;</div>
+      <h3>Knowledge &amp; Insights Hub</h3>
+      <p>Searchable resource centre with reports, research, articles, and thought leadership designed to encourage repeat visits and long-term engagement.</p>
+    </div>
+    <div class="feature-card no-break">
+      <div class="feature-icon-wrap">&#127775;</div>
+      <h3>CMS Self-Sufficiency</h3>
+      <p>Full team training, CMS handbook, publishing workflows, and post-launch support ensuring ACT owns and manages its platform independently.</p>
+    </div>
+  </div>
+</div>
+ 
+<!-- SEO / ACCESSIBILITY -->
+<div class="section section-alt">
+  <div class="eyebrow eyebrow-onwhite">Standards</div>
+  <h2>SEO, accessibility &amp; analytics</h2>
+  <p class="lead">Built to be found, inclusive for all users, and measurable from day one.</p>
+  <div class="seo-grid">
+    <div class="seo-card no-break">
+      <h4>SEO Readiness</h4>
+      <ul>
+        <li>Optimized metadata</li>
+        <li>Structured schema markup</li>
+        <li>Sitemap generation</li>
+        <li>Search-friendly URLs</li>
+      </ul>
+    </div>
+    <div class="seo-card no-break">
+      <h4>Accessibility</h4>
+      <ul>
+        <li>WCAG-aligned implementation</li>
+        <li>Keyboard navigation support</li>
+        <li>Screen-reader compatibility</li>
+        <li>Color contrast compliance</li>
+      </ul>
+    </div>
+    <div class="seo-card no-break">
+      <h4>Analytics</h4>
+      <ul>
+        <li>Google Analytics 4</li>
+        <li>Search Console integration</li>
+        <li>Microsoft Clarity heatmaps</li>
+        <li>Actionable user insights</li>
+      </ul>
+    </div>
+  </div>
+</div>
+ 
+<!-- Q&A -->
+<div class="section section-cream">
+  <div class="eyebrow">Responses to ACT's questions</div>
+  <h2>Thinking beyond the brief</h2>
+  <p class="lead">Considered answers to the questions that matter most to ACT's next chapter.</p>
+  <div class="qa-grid">
+    <div class="qa-card no-break">
+      <div class="qa-q">Beyond a strong first impression, what would bring visitors back?</div>
+      <p>By transforming the site into a living platform — portfolio updates, founder stories, research publications, impact dashboards, and ecosystem insights — we create ongoing value for founders, philanthropists, media, and ecosystem partners.</p>
+    </div>
+    <div class="qa-card no-break">
+      <div class="qa-q">How would you balance investor credibility with warmth?</div>
+      <p>By combining data-driven impact reporting and clear organizational narratives with founder stories, human-centered storytelling, and authentic imagery — creating both institutional confidence and emotional connection.</p>
+    </div>
+    <div class="qa-card no-break">
+      <div class="qa-q">How would you make the portfolio feel alive?</div>
+      <p>Rather than displaying logos, we create an interactive ecosystem experience: searchable profiles, impact metrics, founder stories, news updates, and related content — allowing visitors to explore ACT's work through multiple pathways.</p>
+    </div>
+    <div class="qa-card no-break">
+      <div class="qa-q">What would you do differently from the current website?</div>
+      <p>We would strengthen narrative clarity, portfolio discoverability, audience-specific journeys, thought leadership visibility, and ongoing engagement opportunities — while preserving ACT's existing strengths and brand recognition.</p>
+    </div>
+  </div>
+</div>
+ 
+<!-- INVESTMENT -->
+<div class="investment-section">
+  <div class="eyebrow eyebrow-light">Investment</div>
+  <h2 style="font-family:'Playfair Display',serif;color:#ffffff;font-size:32px;margin-bottom:14px">Clear scope, fixed price</h2>
+  <div class="inv-grid">
+    <table class="inv-table">
+      <tr>
+        <td class="service">Discovery &amp; Strategy</td>
+        <td class="amount">&#8377;75,000</td>
+      </tr>
+      <tr>
+        <td class="service">UX &amp; Information Architecture</td>
+        <td class="amount">&#8377;75,000</td>
+      </tr>
+      <tr>
+        <td class="service">UI Design System</td>
+        <td class="amount">&#8377;1,25,000</td>
+      </tr>
+      <tr>
+        <td class="service">Website Development</td>
+        <td class="amount">&#8377;2,25,000</td>
+      </tr>
+      <tr>
+        <td class="service">CMS Implementation</td>
+        <td class="amount">&#8377;75,000</td>
+      </tr>
+      <tr>
+        <td class="service">Training &amp; Documentation</td>
+        <td class="amount">&#8377;25,000</td>
+      </tr>
+      <tr>
+        <td class="service">Launch &amp; Support</td>
+        <td class="amount">&#8377;50,000</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding:0;border-bottom:1px solid rgba(200,144,58,0.35);height:1px"></td>
+      </tr>
+      <tr class="inv-total">
+        <td class="service" style="padding-top:18px">Total project investment</td>
+        <td class="amount" style="padding-top:18px;font-size:20px;color:#c8903a">&#8377;6,50,000</td>
+      </tr>
+      <tr class="inv-gst">
+        <td></td>
+        <td class="gst-note">Plus GST as applicable</td>
+      </tr>
+    </table>
+    <div>
+      <div class="big-number">8</div>
+      <div class="big-number-label">Weeks to launch</div>
+      <div class="why-cards">
+        <div class="why-card no-break">
+          <h4>Full editorial independence</h4>
+          <p>ACT's team publishes, edits, and manages everything — no developer dependency, ever.</p>
+        </div>
+        <div class="why-card no-break">
+          <h4>Post-launch support included</h4>
+          <p>Bug fixes, technical assistance, and knowledge transfer are part of the engagement.</p>
+        </div>
+        <div class="why-card no-break">
+          <h4>WCAG accessibility + SEO built-in</h4>
+          <p>Discoverable, inclusive, and technically excellent from the moment we go live.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- CTA -->
+<div class="cta-section">
+  <div class="eyebrow eyebrow-dark">Why ServBuddy</div>
+  <h2>Product thinking meets impact storytelling</h2>
+  <p>ServBuddy combines UX design, modern web development, and scalable content architecture. Our focus is not only delivering a beautiful website — but creating a platform ACT can confidently own, manage, and grow independently.</p>
+  <div class="cta-footer">
+    <div class="cta-contact">
+      <label>Contact</label>
+      <span>Sunita Singh</span>
+    </div>
+    <div class="cta-divider"></div>
+    <div class="cta-contact">
+      <label>Company</label>
+      <span>ServBuddy Technologies</span>
+    </div>
+    <div class="cta-divider"></div>
+    <div class="cta-contact">
+      <label>Website</label>
+      <span class="gold-text">servbuddy.in</span>
+    </div>
+  </div>
+</div>
+ 
+</body>
+</html>
